@@ -21,11 +21,11 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <docker.plugin.version>1.2.0</docker.plugin.version>
-        <docker.image.prefix>192.168.1.188/system_containers</docker.image.prefix>
-        <docker.image.tag>v5.2.0</docker.image.tag>
+        <docker.image.prefix>10.7.164.14/system_containers</docker.image.prefix>
+        <docker.image.tag>v5.3.0-dajia-202110181700</docker.image.tag>
     </properties>
 
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>tenxcloud-group</id>
             <url>http://192.168.2.120:7777/repository/tenxcloud-group/</url>
@@ -33,7 +33,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
 
     <developers>
         <developer>
