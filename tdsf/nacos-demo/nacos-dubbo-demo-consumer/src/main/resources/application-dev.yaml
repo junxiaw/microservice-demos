@@ -3,21 +3,25 @@ spring:
     name: nacos-dubbo-demo-consumer
 services:
   hello:
-    version: 1.0.0
-    group: nacos-dubbo
+    version: 2.0.0
+    group: vm-nacos-dubbo
   test:
-    version: 1.0.0
-    group: nacos-dubbo
+    version: 2.0.0
+    group: vm-nacos-dubbo
 dubbo:
+  registry:
+    address: nacos://10.7.164.43:8848?username=N2as00ELmP53&password=ws7Lov77ldSa
+    parameters:
+      namespace: b096fb131f94
+      group: junxia
+      ignoreCheckKeys: username,password
   consumer:
-    retries: 3
+    retries: ${CONSUMER_RETRIES:0}
     check: false
     parameters:
-      isjoin: true
-      deploy: container
-      svcname: default:nacos-dubbo-demo-consumer
-  registry:
-    address: nacos://127.0.0.1:8848?username=nacos&password=nacos
-    parameters:
-      namespace: public
-      ignoreCheckKeys: username,password
+      isjoin: false
+      deploy: vm
+      svcname: dev:nacos-dubbo-demo-consumer
+      paas-name: nacos-dubbo-demo-consumer
+      paas-ns: dev
+      service-type: Dubbo

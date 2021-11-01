@@ -3,7 +3,7 @@ spring:
     name: nacos-dubbo-demo-provider
 demo:
   service:
-    version: 1.0.0
+    version: 2.0.0
     group: vm-nacos-dubbo
 
 dubbo:
@@ -11,17 +11,21 @@ dubbo:
     port: 20880
     name: dubbo
   registry:
-    address: nacos://10.7.164.31:8848?username=z4ZPEKEAuyEE&password=QDxn1VSnpWD8
+    address: nacos://10.7.164.43:8848?username=Ipqgl6ABhIf6&password=uQKGYER5VKOC
     parameters:
-      namespace: 72950d308774
+      namespace: b096fb131f94
+      group: junxia
       ignoreCheckKeys: username,password
   provider:
     parameters:
-      isjoin: true
+      isjoin: false
       deploy: vm
       svcname: dev:nacos-dubbo-demo-provider
       paas-name: vm-nacos-dubbo-demo-provider
       paas-ns: dev
       service-type: Dubbo
-
-
+logging:
+  level:
+    com:
+      alibaba:
+        nacos: trace
