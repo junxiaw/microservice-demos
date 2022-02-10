@@ -4,11 +4,15 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: public
+        server-addr: 172.16.31.226:8848
+        namespace: tenant-gfg47nzk3tgs
+        group: DEFAULT_GROUP
+        username: ${NACOS_USERNAME:nacos}
+        password: ${NACOS_PASSWORD:nacos}
         metadata:
           isjoin: true
           deploy: container
-          svcname: default:springcloud-demo-provider
-        username: nacos
-        password: nacos
+          svcname: wjx:springcloud-demo-provider
+          paas-name: springcloud-demo-provider
+          paas-ns: wjx
+          service-type: SpringCloud
