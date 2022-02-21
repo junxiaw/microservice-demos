@@ -1,22 +1,24 @@
 spring:
   application:
-    name: springcloud-demo-consumer
+    name: cloud-consumer-nacos204
   cloud:
     nacos:
       discovery:
         server-addr: 172.16.31.226:8848
         namespace: tenant-gfg47nzk3tgs
-        group: DEFAULT_GROUP
+        group: default-group
         username: ${NACOS_USERNAME:nacos}
         password: ${NACOS_PASSWORD:nacos}
         metadata:
 #          pod-name: ${HOSTNAME}
-          paas-name: ${MESH_SVC_NAME:springcloud-demo-consumer}
+          paas-name: ${MESH_SVC_NAME:cloud-consumer-nacos204}
           paas-ns: wjx
           service-type: SpringCloud
           isjoin: true
-          deploy: container
-          svcname: wjx:${MESH_SVC_NAME:springcloud-demo-consumer}
+          deploy: vm
+          svcname: wjx:${MESH_SVC_NAME:cloud-consumer-nacos204}
+          istio:
+            hostname: hostname-cloud-consumer-nacos204
 #模拟故障模拟，设置延时
 feign:
   client:

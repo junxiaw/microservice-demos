@@ -2,4 +2,4 @@ spring:
   profiles:
     active: ${PROFILE:dev}
 server:
-  port: 9102
+  port: 6666

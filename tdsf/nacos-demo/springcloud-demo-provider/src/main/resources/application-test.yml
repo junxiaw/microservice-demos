@@ -1,6 +1,6 @@
 spring:
   application:
-    name: springcloud-demo-provider
+    name: cloud-provider-nacos204
   cloud:
     nacos:
       discovery:
@@ -12,8 +12,8 @@ spring:
         metadata:
           isjoin: ${MESH_SWITCHER_MESH}
           deploy: ${DEPLOY_TYPE}
-          svcname: ${PAAS_NS}:${MESH_SVC_NAME:springcloud-demo-provider}
+          svcname: ${PAAS_NS}:${MESH_SVC_NAME:cloud-provider-nacos204}
           pod-name: ${HOSTNAME}
-          paas-name: ${MESH_SVC_NAME:springcloud-demo-provider}
+          paas-name: ${MESH_SVC_NAME:cloud-provider-nacos204}
           paas-ns: ${PAAS_NS}
           service-type: SpringCloud

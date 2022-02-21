@@ -1,6 +1,6 @@
 spring:
   application:
-    name: springcloud-demo-consumer
+    name: cloud-consumer-nacos204
   cloud:
     nacos:
       discovery:
@@ -11,12 +11,12 @@ spring:
         password: ${NACOS_PASSWORD:nacos}
         metadata:
           pod-name: ${HOSTNAME}
-          paas-name: ${MESH_SVC_NAME:springcloud-demo-consumer}
+          paas-name: ${MESH_SVC_NAME:cloud-consumer-nacos204}
           paas-ns: ${PAAS_NS}
           service-type: SpringCloud
           isjoin: ${MESH_SWITCHER_MESH}
           deploy: ${DEPLOY_TYPE}
-          svcname: ${PAAS_NS}:${MESH_SVC_NAME:springcloud-demo-consumer}
+          svcname: ${PAAS_NS}:${MESH_SVC_NAME:cloud-consumer-nacos204}
 #模拟故障模拟，设置延时
 feign:
   client:

@@ -10,14 +10,14 @@ ENV PROFILE=test \
     NACOS_USERNAME=nacos \
     NACOS_PASSWORD=nacos \
     MESH_SWITCHER_MESH=false\
-    DEPLOY_TYPE=container\
-    MESH_SVC_NAME=springcloud-demo-provider\
+    DEPLOY_TYPE=vm\
+    MESH_SVC_NAME=cloud-provider-nacos204\
     JVM="-Xms256m -Xmx1g -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.security.egd=file:/dev/./urandom"
 
 ADD *.jar /app/app.jar
 
 WORKDIR "/app"
 
-EXPOSE 9102
+EXPOSE 6666
 
 CMD java -jar /app/app.jar
